@@ -1,6 +1,7 @@
 package model
 
 import (
+	"fmt"
 	"uas-mvc/database"
 	"uas-mvc/entities"
 )
@@ -8,7 +9,7 @@ import (
 func ModelInsertMember(container entities.Member) {
 	newGerbong := entities.LinkedlistMember{}
 	newGerbong.Data = container
-	//fmt.Println("test passing data to model :", newGerbong.Data)
+	fmt.Println("test passing data to model :", newGerbong.Data)
 	temp := &database.DBMember
 	if temp.Next == nil {
 		temp.Next = &newGerbong

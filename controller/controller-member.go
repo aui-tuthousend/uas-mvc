@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"uas-mvc/entities"
 	"uas-mvc/model"
 )
@@ -14,6 +15,6 @@ func ControllerInsertMember(nama string, pass int) {
 		Nama: nama,
 		Pass: pass,
 	}
-	//fmt.Println("testing passing data controller ", data)
+	fmt.Println("testing passing data controller ", data)
 	model.ModelInsertMember(data)
 }
