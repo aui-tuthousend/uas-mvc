@@ -1,13 +1,13 @@
-package controller
+package controller_member_vip
 
 import (
 	"fmt"
 	"uas-mvc/entities"
-	"uas-mvc/model"
+	modelVip "uas-mvc/model/model-member-vip"
 )
 
 func ControllerFindAllMemberVip() []entities.MemberVip {
-	return model.ModelViewAllMemberVip()
+	return modelVip.ModelViewAllMemberVip()
 }
 
 func ControllerInsertMemberVip(namaVip string, passVip int) {
@@ -16,11 +16,11 @@ func ControllerInsertMemberVip(namaVip string, passVip int) {
 		Pass: passVip,
 	}
 	fmt.Println("testing passing data controller ", dataVip)
-	model.ModelInsertMemberVip(dataVip)
+	modelVip.ModelInsertMemberVip(dataVip)
 }
 
 func ControllerViewByIdMemberVip(nama string) *entities.MemberVip {
-	current := model.ModelViewByIdMemberVip(nama)
+	current := modelVip.ModelViewByIdMemberVip(nama)
 	if current == nil {
 		return nil
 	}

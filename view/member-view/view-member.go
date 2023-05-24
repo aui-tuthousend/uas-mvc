@@ -2,7 +2,7 @@ package member_view
 
 import (
 	"fmt"
-	controller "uas-mvc/controller"
+	controller "uas-mvc/controller/controller-member"
 )
 
 func InsertMember() {

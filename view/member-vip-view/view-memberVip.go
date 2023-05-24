@@ -2,35 +2,35 @@ package member_vip_view
 
 import (
 	"fmt"
-	"uas-mvc/controller"
+	controllerVip "uas-mvc/controller/controller-member-vip"
 )
 
 func InsertMemberVip() {
-	var nama string
+	var namaVip string
 	var pass int
 	fmt.Print("masukkan Nama Member VIP Baru : ")
-	fmt.Scan(&nama)
+	fmt.Scan(&namaVip)
 	fmt.Print("masukkan Password : ")
 	fmt.Scan(&pass)
-	controller.ControllerInsertMemberVip(nama, pass)
+	controllerVip.ControllerInsertMemberVip(namaVip, pass)
 }
 
 func ViewMemberVip() {
-	allMember := controller.ControllerFindAllMemberVip()
-	for _, member := range allMember {
+	allMemberVip := controllerVip.ControllerFindAllMemberVip()
+	for _, member := range allMemberVip {
 		fmt.Println("Nama Member VIP :", member.Nama)
 		fmt.Println("Pass Member :", member.Pass)
 	}
 }
 
 func ViewByIdMemberVip() {
-	var nama string
+	var namaVip string
 	fmt.Print("Masukan Nama Member: ")
-	fmt.Scan(&nama)
-	current := controller.ControllerViewByIdMemberVip(nama)
-	if current != nil {
-		fmt.Println(current.Nama)
-		fmt.Println(current.Pass)
+	fmt.Scan(&namaVip)
+	currentVip := controllerVip.ControllerViewByIdMemberVip(namaVip)
+	if currentVip != nil {
+		fmt.Println(currentVip.Nama)
+		fmt.Println(currentVip.Pass)
 	} else {
 		fmt.Println("Nama member tidak di temukan")
 	}

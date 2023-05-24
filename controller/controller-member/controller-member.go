@@ -1,8 +1,8 @@
-package controller
+package controller_member
 
 import (
 	"uas-mvc/entities"
-	"uas-mvc/model"
+	model "uas-mvc/model/model-member"
 )
 
 func ControllerFindAllMember() []entities.Member {

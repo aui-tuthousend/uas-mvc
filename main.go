@@ -23,15 +23,14 @@ func main() {
 			switch pilih1 {
 			case 1:
 				reguler.InsertMember()
-
 			case 2:
 				fmt.Println("blom")
 			case 3:
 				reguler.ViewMember()
 			case 4:
 				reguler.ViewByIdMember()
-			case 5:
-				continue
+			// case 5:
+			// continue
 			default:
 				fmt.Println("menu tidak ada")
 			}
@@ -48,8 +47,8 @@ func main() {
 				vip.ViewMemberVip()
 			case 4:
 				vip.ViewByIdMemberVip()
-			case 5:
-				continue
+			// case 5:
+			// continue
 			default:
 				fmt.Println("menu tidak ada")
 			}
