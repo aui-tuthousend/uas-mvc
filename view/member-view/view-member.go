@@ -8,12 +8,12 @@ import (
 func InsertMember() {
 	var nama string
 	var pass int
-	fmt.Print("masukkan Nama Member Baru : ")
-	fmt.Scan(&nama)
+	fmt.Print("\nmasukkan Nama Member Baru : ")
+	fmt.Scanln(&nama)
 	fmt.Print("masukkan Password : ")
-	fmt.Scan(&pass)
+	fmt.Scanln(&pass)
 	controller.ControllerInsertMember(nama, pass)
-	fmt.Println("Member Berhasil Dibuat!")
+	fmt.Println("\nMember Berhasil Dibuat!")
 }
 
 func ViewMember() {
@@ -27,7 +27,7 @@ func ViewMember() {
 func ViewByIdMember() {
 	var nama string
 	fmt.Print("Masukan Nama Member: ")
-	fmt.Scan(&nama)
+	fmt.Scanln(&nama)
 	current := controller.ControllerViewByIdMember(nama)
 	if current != nil {
 		fmt.Println(current.Nama)

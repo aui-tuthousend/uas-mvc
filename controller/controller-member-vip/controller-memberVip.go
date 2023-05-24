@@ -1,7 +1,6 @@
 package controller_member_vip
 
 import (
-	"fmt"
 	"uas-mvc/entities"
 	modelVip "uas-mvc/model/model-member-vip"
 )
@@ -15,7 +14,7 @@ func ControllerInsertMemberVip(namaVip string, passVip int) {
 		Nama: namaVip,
 		Pass: passVip,
 	}
-	fmt.Println("testing passing data controller ", dataVip)
+	//fmt.Println("testing passing data controller ", dataVip)
 	modelVip.ModelInsertMemberVip(dataVip)
 }
 

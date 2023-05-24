@@ -8,11 +8,12 @@ import (
 func InsertMemberVip() {
 	var namaVip string
 	var pass int
-	fmt.Print("masukkan Nama Member VIP Baru : ")
-	fmt.Scan(&namaVip)
+	fmt.Print("\nmasukkan Nama Member VIP Baru : ")
+	fmt.Scanln(&namaVip)
 	fmt.Print("masukkan Password : ")
-	fmt.Scan(&pass)
+	fmt.Scanln(&pass)
 	controllerVip.ControllerInsertMemberVip(namaVip, pass)
+	fmt.Println("\nMember Berhasil Dibuat!")
 }
 
 func ViewMemberVip() {
@@ -26,7 +27,7 @@ func ViewMemberVip() {
 func ViewByIdMemberVip() {
 	var namaVip string
 	fmt.Print("Masukan Nama Member: ")
-	fmt.Scan(&namaVip)
+	fmt.Scanln(&namaVip)
 	currentVip := controllerVip.ControllerViewByIdMemberVip(namaVip)
 	if currentVip != nil {
 		fmt.Println(currentVip.Nama)
