@@ -2,28 +2,63 @@ package main
 
 import (
 	"fmt"
-	"uas-mvc/view"
+	view "uas-mvc/view"
+	reguler "uas-mvc/view/member-view"
+	vip "uas-mvc/view/member-vip-view"
 )
 
 func main() {
 
-	for {
-		var menu int
+	var lanjut string
+	var menu int
+
+	for lanjut != "t" {
 		view.MenuUtama()
 		fmt.Scanln(&menu)
-		switch menu {
-		case 1:
-			var pilih int
+
+		if menu == 1 {
+			var pilih1 int
 			view.MenuReguler()
-			fmt.Scanln(&pilih)
-		case 2:
-			var pilih int
+			fmt.Scanln(&pilih1)
+			switch pilih1 {
+			case 1:
+				reguler.InsertMember()
+
+			case 2:
+				fmt.Println("blom")
+			case 3:
+				reguler.ViewMember()
+			case 4:
+				reguler.ViewByIdMember()
+			case 5:
+				continue
+			default:
+				fmt.Println("menu tidak ada")
+			}
+		} else if menu == 2 {
+			var pilih2 int
 			view.MenuVip()
-			fmt.Scanln(&pilih)
+			fmt.Scanln(&pilih2)
+			switch pilih2 {
+			case 1:
+				vip.InsertMemberVip()
+			case 2:
+				fmt.Println("blom")
+			case 3:
+				vip.ViewMemberVip()
+			case 4:
+				vip.ViewByIdMemberVip()
+			case 5:
+				continue
+			default:
+				fmt.Println("menu tidak ada")
+			}
+		} else {
+			fmt.Println("menu tidak ada")
 		}
+
 	}
-	//view.InsertMember()
-	//view.InsertMemberVip()
-	//view.ViewMember()
-	//view.ViewMemberVip()
+
+	fmt.Print("\nApakah ingin lanjut? [y/t]: ")
+	fmt.Scanln(&lanjut)
 }

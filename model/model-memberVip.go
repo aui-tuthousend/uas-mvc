@@ -2,7 +2,7 @@ package model
 
 import (
 	"fmt"
-	"uas-mvc/database"
+	DB "uas-mvc/database"
 	"uas-mvc/entities"
 )
 
@@ -10,7 +10,7 @@ func ModelInsertMemberVip(container entities.MemberVip) {
 	newGerbongVip := entities.LinkedlistMemberVip{}
 	newGerbongVip.DataVip = container
 	fmt.Println("test passing data to model :", newGerbongVip.DataVip)
-	temp := &database.DBMemberVip
+	temp := &DB.DBMemberVip
 	if temp.Next == nil {
 		temp.Next = &newGerbongVip
 	} else {
@@ -22,11 +22,22 @@ func ModelInsertMemberVip(container entities.MemberVip) {
 }
 
 func ModelViewAllMemberVip() []entities.MemberVip {
-	temp := database.DBMemberVip.Next
+	temp := DB.DBMemberVip.Next
 	membersVip := []entities.MemberVip{}
 	for temp != nil {
 		membersVip = append(membersVip, temp.DataVip)
 		temp = temp.Next
 	}
 	return membersVip
+}
+
+func ModelViewByIdMemberVip(nama string) *entities.MemberVip {
+	temp := &DB.DBMemberVip
+	for temp != nil {
+		if temp.DataVip.Nama == nama {
+			return &temp.DataVip
+		}
+		temp = temp.Next
+	}
+	return nil
 }

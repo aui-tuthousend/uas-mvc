@@ -18,3 +18,11 @@ func ControllerInsertMemberVip(namaVip string, passVip int) {
 	fmt.Println("testing passing data controller ", dataVip)
 	model.ModelInsertMemberVip(dataVip)
 }
+
+func ControllerViewByIdMemberVip(nama string) *entities.MemberVip {
+	current := model.ModelViewByIdMemberVip(nama)
+	if current == nil {
+		return nil
+	}
+	return current
+}
